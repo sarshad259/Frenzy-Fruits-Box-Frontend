@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%; /* Black */
+    --foreground: 0 0% 98%; /* White */
+    --card: 0 0% 3.9%; /* Black */
+    --card-foreground: 0 0% 98%; /* White */
+    --popover: 0 0% 3.9%; /* Black */
+    --popover-foreground: 0 0% 98%; /* White */
+    --primary: 45 100% 51%; /* Gold */
+    --primary-foreground: 0 0% 9%; /* Dark Gray for text on gold buttons */
+    --secondary: 0 0% 14.9%; /* Dark Gray */
+    --secondary-foreground: 0 0% 98%; /* White */
+    --muted: 0 0% 14.9%; /* Dark Gray */
+    --muted-foreground: 0 0% 63.9%; /* Medium Gray */
+    --accent: 0 0% 14.9%; /* Dark Gray */
+    --accent-foreground: 45 100% 51%; /* Gold */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%; /* Dark Gray */
+    --input: 0 0% 14.9%; /* Dark Gray */
+    --ring: 45 100% 51%; /* Gold */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 3.9%; /* Black */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 0 0% 3.9%; /* Black */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 0 0% 3.9%; /* Black */
+    --primary: 45 100% 51%; /* Gold */
+    --primary-foreground: 0 0% 9%; /* Dark Gray for text on gold buttons */
+    --secondary: 0 0% 96.1%; /* Light Gray */
+    --secondary-foreground: 0 0% 9%; /* Dark Gray */
+    --muted: 0 0% 96.1%; /* Light Gray */
+    --muted-foreground: 0 0% 45.1%; /* Medium Gray */
+    --accent: 45 96% 91%; /* Light Gold */
+    --accent-foreground: 45 100% 51%; /* Gold */
+    --destructive: 0 84.2% 60.2%; /* Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+    --border: 0 0% 89.8%; /* Light Gray */
+    --input: 0 0% 89.8%; /* Light Gray */
+    --ring: 45 100% 51%; /* Gold */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
