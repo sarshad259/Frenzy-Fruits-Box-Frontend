@@ -22,7 +22,7 @@ import {
   CupSoda,
 } from "lucide-react";
 import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
-import frenzyLogo from "@/assets/Frenzy-logo.png";
+import frenzyLogo from "@/assets/frenzy-logo.png";
 
 const categoriesWithIcon = [
   { id: "Fresh_fruits", label: "Fresh fruits", icon: Apple },
@@ -250,7 +250,7 @@ function ShoppingHome() {
             {/* Social Icons */}
             <div className="flex gap-8">
               <a
-                href="https://wa.me/923308121736"
+                href="https://wa.me/923146099429"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"

@@ -78,6 +78,21 @@ const AdminProductsSlice = createSlice({
       .addCase(fetchAllProducts.rejected, (state, action) => {
         state.isLoading = false;
         state.productList = [];
+      })
+      .addCase(deleteProduct.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deleteProduct.fulfilled, (state, action) => {
+        state.isLoading = false;
+        // Remove the deleted product from the list if id is available
+        if (action.meta && action.meta.arg) {
+          state.productList = state.productList.filter(
+            (product) => product._id !== action.meta.arg
+          );
+        }
+      })
+      .addCase(deleteProduct.rejected, (state) => {
+        state.isLoading = false;
       });
   },
 });

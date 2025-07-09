@@ -91,7 +91,7 @@ function UserCartItemsContent({ cartItem }) {
   }
   function getDisplaySizeLabel() {
     if (cartItem?.sizeLabel) return cartItem.sizeLabel;
-    if (cartItem?.size === "small") return "Small (8oz)";
+    if (cartItem?.size === "small") return "Small (9oz)";
     if (cartItem?.size === "medium") return "Medium (12oz)";
     if (cartItem?.size === "large") return "Large (16oz)";
     return null;
