@@ -250,7 +250,7 @@ function ShoppingHome() {
             {/* Social Icons */}
             <div className="flex gap-8">
               <a
-                href="https://wa.me/923146099429"
+                href="https://wa.me/923308121736"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"

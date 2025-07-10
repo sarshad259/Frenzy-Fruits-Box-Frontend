@@ -99,7 +99,7 @@ export const addProductFormElements = [
 
 export const sizePriceFormElements = [
   {
-    label: "Small Price (9oz)",
+    label: "Small Price (8oz)",
     name: "smallPrice",
     componentType: "input",
     type: "number",
@@ -120,7 +120,7 @@ export const sizePriceFormElements = [
     placeholder: "Enter large size price",
   },
   {
-    label: "Small Sale Price (9oz)",
+    label: "Small Sale Price (8oz)",
     name: "smallSalePrice",
     componentType: "input",
     type: "number",

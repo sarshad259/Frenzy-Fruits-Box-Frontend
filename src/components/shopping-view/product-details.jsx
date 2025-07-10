@@ -25,7 +25,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   const { toast } = useToast();
 
   const sizeOptions = [
-    { value: "small", label: "Small (9oz)" },
+    { value: "small", label: "Small (8oz)" },
     { value: "medium", label: "Medium (12oz)" },
     { value: "large", label: "Large (16oz)" },
   ];
@@ -44,7 +44,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         small: {
           price: productDetails?.smallPrice,
           salePrice: productDetails?.smallSalePrice,
-          label: "Small (9oz)",
+          label: "Small (8oz)",
         },
         medium: {
           price: productDetails?.mediumPrice,

@@ -23,7 +23,7 @@ function ShoppingProductTile({
         small: {
           price: product?.smallPrice,
           salePrice: product?.smallSalePrice,
-          label: "Small (9oz)",
+          label: "Small (8oz)",
         },
         medium: {
           price: product?.mediumPrice,
@@ -94,7 +94,7 @@ function ShoppingProductTile({
                       setSelectedSize(size);
                     }}
                   >
-                    {size === "small" && "Small (9oz)"}
+                    {size === "small" && "Small (8oz)"}
                     {size === "medium" && "Medium (12oz)"}
                     {size === "large" && "Large (16oz)"}
                   </button>
