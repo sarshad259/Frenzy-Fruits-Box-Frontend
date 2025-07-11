@@ -211,6 +211,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             )}
           </div>
           <Separator className="animate-fade-in delay-500" />
+          {/* Only reviews list is scrollable now */}
           <div className="max-h-[300px] overflow-auto animate-fade-in delay-600 mt-4">
             <h2 className="text-lg md:text-xl font-bold mb-4">Reviews</h2>
             <div className="flex flex-col gap-4">
@@ -239,29 +240,30 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                 <h1>No Reviews</h1>
               )}
             </div>
-            <div className="mt-8 flex flex-col gap-2 animate-fade-in delay-700 w-full">
-              <Label>Write a review</Label>
-              <div className="flex gap-1 flex-wrap">
-                <StarRatingComponent
-                  rating={rating}
-                  handleRatingChange={handleRatingChange}
-                />
-              </div>
-              <Input
-                name="reviewMsg"
-                value={reviewMsg}
-                onChange={(event) => setReviewMsg(event.target.value)}
-                placeholder="Write a review..."
-                className="w-full"
+          </div>
+          {/* Review input and submit button always visible at the bottom */}
+          <div className="mt-8 flex flex-col gap-2 animate-fade-in delay-700 w-full">
+            <Label>Write a review</Label>
+            <div className="flex gap-1 flex-wrap">
+              <StarRatingComponent
+                rating={rating}
+                handleRatingChange={handleRatingChange}
               />
-              <Button
-                onClick={handleAddReview}
-                disabled={reviewMsg.trim() === ""}
-                className="transition-transform duration-200 w-full"
-              >
-                Submit
-              </Button>
             </div>
+            <Input
+              name="reviewMsg"
+              value={reviewMsg}
+              onChange={(event) => setReviewMsg(event.target.value)}
+              placeholder="Write a review..."
+              className="w-full"
+            />
+            <Button
+              onClick={handleAddReview}
+              disabled={reviewMsg.trim() === ""}
+              className="transition-transform duration-200 w-full"
+            >
+              Submit
+            </Button>
           </div>
         </div>
       </DialogContent>
