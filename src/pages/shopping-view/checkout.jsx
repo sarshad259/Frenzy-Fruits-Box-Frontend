@@ -95,7 +95,7 @@ function ShoppingCheckout() {
         dispatch(clearCart());
         
         if (user?.id) {
-          axios.delete(`http://localhost:5000/api/shop/cart/clear/${user.id}`)
+          axios.delete(`"https://frenzy-fruits-box-backend.onrender.com/api/shop/cart/clear/${user.id}`)
             .then(res => {})
             .catch(err => {
               console.error('Failed to clear cart:', err);

@@ -7,7 +7,7 @@ export const fetchCartItems = createAsyncThunk(
   "cart/fetchCartItems",
   async (userId, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/shop/cart/get/${userId}`);
+      const response = await axios.get(`https://frenzy-fruits-box-backend.onrender.com/api/shop/cart/get/${userId}`);
       return response.data;
     } catch (err) {
       return rejectWithValue({ message: err.response?.data?.message || "Cart not found" });
@@ -25,7 +25,7 @@ export const addCartItem = createAsyncThunk(
     // If not found, fetch from backend
     if (!product) {
       try {
-        const response = await axios.get(`http://localhost:5000/api/shop/products/get/${productId}`);
+        const response = await axios.get(`https://frenzy-fruits-box-backend.onrender.com/api/shop/products/get/${productId}`);
         product = response.data?.data;
       } catch (err) {
         return rejectWithValue({ message: "Product not found." });
@@ -43,7 +43,7 @@ export const addCartItem = createAsyncThunk(
       if (sizeLabel !== undefined) payload.sizeLabel = sizeLabel;
       if (price !== undefined) payload.price = price;
 
-      const response = await axios.post("http://localhost:5000/api/shop/cart/add", payload);
+      const response = await axios.post("https://frenzy-fruits-box-backend.onrender.com/api/shop/cart/add", payload);
       return response.data;
     } catch (err) {
       console.error('addCartItem error:', err, err.response?.data);
@@ -68,8 +68,8 @@ export const updateCartItemQuantity = createAsyncThunk(
     try {
       const payload = { userId, productId, quantity };
       if (size !== undefined) payload.size = size;
-      
-      const response = await axios.put("http://localhost:5000/api/shop/cart/update-cart", payload);
+
+      const response = await axios.put("https://frenzy-fruits-box-backend.onrender.com/api/shop/cart/update-cart", payload);
       return response.data;
     } catch (err) {
       return rejectWithValue({ message: err.response?.data?.message || "Quantity update failed" });
@@ -82,7 +82,7 @@ export const deleteCartItem = createAsyncThunk(
   "cart/deleteCartItem",
   async ({ userId, productId, size }, { rejectWithValue }) => {
     try {
-      let url = `http://localhost:5000/api/shop/cart/delete/${userId}/${productId}`;
+      let url = `https://frenzy-fruits-box-backend.onrender.com/api/shop/cart/delete/${userId}/${productId}`;
       if (size) url += `?size=${encodeURIComponent(size)}`;
       const response = await axios.delete(url);
       return { productId, size, cartItems: response.data.data };
