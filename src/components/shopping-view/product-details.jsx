@@ -156,8 +156,8 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             loading="lazy"
           />
         </div>
-        {/* Make this column scrollable if content overflows */}
-        <div className="flex flex-col justify-between w-full max-w-2xl mx-auto max-h-[80vh] overflow-auto pr-2">
+        {/* Responsive scrollable column for all devices, with always-visible close button */}
+        <div className="flex flex-col justify-between w-full max-w-2xl mx-auto md:max-h-[80vh] max-h-[90vh] overflow-y-auto pr-2 pl-2 scrollbar-thin scrollbar-thumb-rounded pt-2 pb-4">
           <div>
             <h1 className="text-2xl md:text-3xl font-extrabold mb-2 animate-fade-in">{productDetails?.title}</h1>
             <p className="text-muted-foreground text-lg md:text-2xl mb-5 mt-4 animate-fade-in delay-100">
