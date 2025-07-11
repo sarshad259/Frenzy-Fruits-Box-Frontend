@@ -145,7 +145,9 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
 
   return (
     <Dialog open={open} onOpenChange={handleDialogClose}>
-      <DialogContent className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 p-2 sm:p-4 md:p-8 max-w-[98vw] md:max-w-[90vw] lg:max-w-[70vw] bg-card rounded-2xl shadow-2xl animate-fade-in-up transition-all duration-300">
+      <DialogContent
+        className="relative bg-card rounded-2xl shadow-2xl animate-fade-in-up transition-all duration-300 p-2 sm:p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-[98vw] md:max-w-[90vw] lg:max-w-[70vw] w-screen h-screen max-w-full max-h-full md:w-auto md:h-auto md:max-h-[80vh]"
+      >
         <div className="relative overflow-hidden rounded-xl group transition-transform duration-300 w-full max-w-[400px] mx-auto aspect-square flex items-center justify-center">
           <img
             src={productDetails?.image}
