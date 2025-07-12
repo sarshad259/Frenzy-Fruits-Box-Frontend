@@ -145,9 +145,7 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
 
   return (
     <Dialog open={open} onOpenChange={handleDialogClose}>
-      <DialogContent
-        className="relative bg-card rounded-2xl shadow-2xl animate-fade-in-up transition-all duration-300 p-2 sm:p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-[98vw] md:max-w-[90vw] lg:max-w-[70vw] w-screen h-screen max-w-full max-h-screen overflow-y-auto md:w-auto md:h-auto md:max-h-[80vh]"
-      >
+      <DialogContent className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 p-2 sm:p-4 md:p-8 max-w-[98vw] md:max-w-[90vw] lg:max-w-[70vw] bg-card rounded-2xl shadow-2xl animate-fade-in-up transition-all duration-300">
         <div className="relative overflow-hidden rounded-xl group transition-transform duration-300 w-full max-w-[400px] mx-auto aspect-square flex items-center justify-center">
           <img
             src={productDetails?.image}
@@ -158,8 +156,8 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
             loading="lazy"
           />
         </div>
-        {/* Responsive scrollable column for all devices, with always-visible close button */}
-        <div className="relative flex flex-col justify-between w-full max-w-2xl mx-auto max-h-[90vh] md:max-h-[80vh] overflow-y-scroll touch-pan-y pr-2 pl-2 scrollbar-thin scrollbar-thumb-rounded pt-2 pb-16" style={{ WebkitOverflowScrolling: 'touch' }}>
+        {/* Responsive scrollable column for all devices. Only this column scrolls, not the whole modal. */}
+        <div className="flex flex-col justify-between w-full max-w-2xl mx-auto max-h-[70vh] md:max-h-[80vh] overflow-y-auto pr-2 pl-2 pt-2 pb-16">
           <div>
             <h1 className="text-2xl md:text-3xl font-extrabold mb-2 animate-fade-in">{productDetails?.title}</h1>
             <p className="text-muted-foreground text-lg md:text-2xl mb-5 mt-4 animate-fade-in delay-100">
